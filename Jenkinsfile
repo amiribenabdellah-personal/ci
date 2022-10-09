@@ -5,9 +5,7 @@ pipeline {
     stages {
        stage ('GIT') {
             steps {
-               echo "Getting Project from Git"; 
-                git branch: "master", 
-                    url: "git@github.com:amiribenabdellah-personal/ci.git" 
+		bat "git clone https://github.com/amiribenabdellah-personal/ci" 
             }
         }
 
