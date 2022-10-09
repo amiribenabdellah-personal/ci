@@ -14,7 +14,7 @@ pipeline {
         stage("Build") {
             steps {
                 bat "mvn -version"
-                bat "mvn clean package -DskipTests"
+                bat "mvn clean package"
             }
         }
         //hello
@@ -32,7 +32,7 @@ pipeline {
         stage("DEPLOY") {
             steps {
 				
-                bat "mvn clean install deploy:deploy-file -DskipTests  -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.2.jar"
+                bat "mvn clean install deploy:deploy-file  -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.2.jar"
             }
         }
         stage('Publish Test Coverage Report') {
