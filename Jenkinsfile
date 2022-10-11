@@ -31,7 +31,7 @@ pipeline {
         stage("DEPLOY") {
             steps {
 				
-                bat "mvn clean install deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.6 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.6.jar"           
+                bat "mvn clean install deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet -Dversion=1.7 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-1.7.jar"           
             }
         }
     }
